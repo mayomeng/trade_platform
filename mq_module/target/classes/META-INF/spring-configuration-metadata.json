@@ -1,0 +1,97 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka",
+      "type": "trade.mayo.messageQueue.kafka.KafkaProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.acks",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.auto-commit-interval-ms",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.auto-offset-reset",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.batch-size",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.bootstra-servers",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.buffer-memory",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.consumer-thread-num",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.enable-auto-commit",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.group-id",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.key-deserializer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.key-serializer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.linger-ms",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.retries",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.session-timeout-ms",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.topic-names",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.value-deserializer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.messageQueue.kafka.KafkaProperties",
+      "name": "kafka.value-serializer",
+      "type": "java.lang.String"
+    }
+  ]
+}

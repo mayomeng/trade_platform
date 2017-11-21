@@ -1,0 +1,81 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper",
+      "type": "trade.mayo.zookeeper.curator.ZookeeperProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.admin-auth",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.catche-auth",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.config-acl-scheme",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "defaultValue": 0,
+      "name": "zookeeper.connection-timeout",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.connections",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.kafka-name-space",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.mq-auth",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.namespace",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.platform-acl-scheme",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "name": "zookeeper.redis-name-space",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "defaultValue": 0,
+      "name": "zookeeper.retry-base-sleep-time-ms",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "defaultValue": 0,
+      "name": "zookeeper.retry-max-retries",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.zookeeper.curator.ZookeeperProperties",
+      "defaultValue": 0,
+      "name": "zookeeper.session-timeout",
+      "type": "java.lang.Integer"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+trade.mayo.schedule.impl.MailJob
+trade.mayo.schedule.impl.PingJob

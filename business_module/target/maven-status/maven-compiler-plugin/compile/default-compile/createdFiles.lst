@@ -1,0 +1,4 @@
+trade\mayo\service\HelloService.class
+trade\mayo\dao\impl\HelloDaoImpl.class
+trade\mayo\dao\impl\HelloDao.class
+trade\mayo\service\impl\HelloServiceImpl.class

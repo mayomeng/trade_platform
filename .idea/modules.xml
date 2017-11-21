@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/action_module/action_module.iml" filepath="$PROJECT_DIR$/action_module/action_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back_module/back_module.iml" filepath="$PROJECT_DIR$/back_module/back_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business_module/business_module.iml" filepath="$PROJECT_DIR$/business_module/business_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/catche_module/catche_module.iml" filepath="$PROJECT_DIR$/catche_module/catche_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common_module/common_module.iml" filepath="$PROJECT_DIR$/common_module/common_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config_module/config_module.iml" filepath="$PROJECT_DIR$/config_module/config_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo_module/dubbo_module.iml" filepath="$PROJECT_DIR$/dubbo_module/dubbo_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mq_module/mq_module.iml" filepath="$PROJECT_DIR$/mq_module/mq_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schedule_module/schedule_module.iml" filepath="$PROJECT_DIR$/schedule_module/schedule_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/start_module/start_module.iml" filepath="$PROJECT_DIR$/start_module/start_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trade_platform.iml" filepath="$PROJECT_DIR$/trade_platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper_module/zookeeper_module.iml" filepath="$PROJECT_DIR$/zookeeper_module/zookeeper_module.iml" />
+    </modules>
+  </component>
+</project>

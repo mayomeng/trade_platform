@@ -1,0 +1,8 @@
+trade\mayo\messageQueue\kafka\KafkaProducerConfiguration.class
+trade\mayo\messageQueue\kafka\KafkaProperties.class
+trade\mayo\messageQueue\MessageTemplate.class
+trade\mayo\messageQueue\MessageValue.class
+trade\mayo\messageQueue\kafka\Listener.class
+trade\mayo\messageQueue\MessageKey.class
+META-INF\spring-configuration-metadata.json
+trade\mayo\messageQueue\kafka\KafkaConsumerConfiguration.class

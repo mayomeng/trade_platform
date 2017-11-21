@@ -1,0 +1,5 @@
+trade\mayo\distributed\Client.class
+trade\mayo\security\WebSecurityConfig.class
+META-INF\spring-configuration-metadata.json
+trade\mayo\service\CustomUserDetailsService.class
+trade\mayo\utils\ApplicationContextUtil.class

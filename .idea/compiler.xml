@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="action_module" />
+        <module name="back_module" />
+        <module name="business_module" />
+        <module name="catche_module" />
+        <module name="common_module" />
+        <module name="config_module" />
+        <module name="dubbo_module" />
+        <module name="mq_module" />
+        <module name="schedule_module" />
+        <module name="start_module" />
+        <module name="zookeeper_module" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="action_module" target="1.8" />
+      <module name="back_module" target="1.8" />
+      <module name="business_module" target="1.8" />
+      <module name="catche_module" target="1.8" />
+      <module name="common_module" target="1.8" />
+      <module name="config_module" target="1.8" />
+      <module name="dubbo_module" target="1.8" />
+      <module name="mq_module" target="1.8" />
+      <module name="schedule_module" target="1.8" />
+      <module name="start_module" target="1.8" />
+      <module name="trade_platform" target="1.8" />
+      <module name="zookeeper_module" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

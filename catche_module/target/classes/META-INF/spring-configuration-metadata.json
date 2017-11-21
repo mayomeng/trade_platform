@@ -1,0 +1,52 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "name": "redis",
+      "type": "trade.mayo.catche.redis.RedisProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "defaultValue": 0,
+      "name": "redis.default-max-redirections",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "defaultValue": 0,
+      "name": "redis.default-timeout",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "defaultValue": 0,
+      "name": "redis.max-idle",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "defaultValue": 0,
+      "name": "redis.max-total",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "defaultValue": 0,
+      "name": "redis.max-wait-millis",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "name": "redis.ports",
+      "type": "java.util.List<java.lang.Integer>"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
+      "name": "redis.redis-hosts",
+      "type": "java.util.List<java.lang.String>"
+    }
+  ]
+}
