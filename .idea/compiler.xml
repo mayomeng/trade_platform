@@ -12,6 +12,8 @@
         <module name="catche_module" />
         <module name="common_module" />
         <module name="config_module" />
+        <module name="db_module" />
+        <module name="dbtestaction_module" />
         <module name="dubbo_module" />
         <module name="mq_module" />
         <module name="schedule_module" />
@@ -19,13 +21,15 @@
         <module name="zookeeper_module" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel>
       <module name="action_module" target="1.8" />
       <module name="back_module" target="1.8" />
       <module name="business_module" target="1.8" />
       <module name="catche_module" target="1.8" />
       <module name="common_module" target="1.8" />
       <module name="config_module" target="1.8" />
+      <module name="db_module" target="1.8" />
+      <module name="dbtestaction_module" target="1.8" />
       <module name="dubbo_module" target="1.8" />
       <module name="mq_module" target="1.8" />
       <module name="schedule_module" target="1.8" />

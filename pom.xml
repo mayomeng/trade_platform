@@ -20,6 +20,8 @@
         <module>zookeeper_module</module>
         <module>config_module</module>
         <module>back_module</module>
+        <module>db_module</module>
+        <module>dbtestaction_module</module>
     </modules>
 
     <properties>

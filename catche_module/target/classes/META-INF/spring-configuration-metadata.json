@@ -10,31 +10,36 @@
   "properties": [
     {
       "sourceType": "trade.mayo.catche.redis.RedisProperties",
-      "defaultValue": 0,
+      "name": "redis.configuration-center",
+      "type": "trade.mayo.zookeeper.configuration.ConfigurationCenter"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
       "name": "redis.default-max-redirections",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "trade.mayo.catche.redis.RedisProperties",
-      "defaultValue": 0,
       "name": "redis.default-timeout",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "trade.mayo.catche.redis.RedisProperties",
-      "defaultValue": 0,
+      "name": "redis.mapper",
+      "type": "org.dozer.Mapper"
+    },
+    {
+      "sourceType": "trade.mayo.catche.redis.RedisProperties",
       "name": "redis.max-idle",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "trade.mayo.catche.redis.RedisProperties",
-      "defaultValue": 0,
       "name": "redis.max-total",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "trade.mayo.catche.redis.RedisProperties",
-      "defaultValue": 0,
       "name": "redis.max-wait-millis",
       "type": "java.lang.Integer"
     },

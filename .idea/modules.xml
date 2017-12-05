@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/catche_module/catche_module.iml" filepath="$PROJECT_DIR$/catche_module/catche_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/common_module/common_module.iml" filepath="$PROJECT_DIR$/common_module/common_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/config_module/config_module.iml" filepath="$PROJECT_DIR$/config_module/config_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/db_module/db_module.iml" filepath="$PROJECT_DIR$/db_module/db_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dbtestaction_module/dbtestaction_module.iml" filepath="$PROJECT_DIR$/dbtestaction_module/dbtestaction_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo_module/dubbo_module.iml" filepath="$PROJECT_DIR$/dubbo_module/dubbo_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/mq_module/mq_module.iml" filepath="$PROJECT_DIR$/mq_module/mq_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/schedule_module/schedule_module.iml" filepath="$PROJECT_DIR$/schedule_module/schedule_module.iml" />

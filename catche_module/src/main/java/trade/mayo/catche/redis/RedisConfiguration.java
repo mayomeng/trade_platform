@@ -3,6 +3,7 @@ package trade.mayo.catche.redis;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,7 @@ import java.util.Set;
 @Configuration
 @EnableConfigurationProperties(RedisProperties.class)// 开启属性注入,通过@autowired注入
 @ConditionalOnClass(JedisClusterConnectionHandler.class) // 判断这个类是否在classpath中存在
+//@ConditionalOnProperty(name="isEnableCatche")
 public class RedisConfiguration {
 
     public static int DEFAULT_MAX_REDIRECTIONS;

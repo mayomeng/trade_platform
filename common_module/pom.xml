@@ -27,6 +27,11 @@
             <artifactId>schedule_module</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>trade.mayo</groupId>
+            <artifactId>db_module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

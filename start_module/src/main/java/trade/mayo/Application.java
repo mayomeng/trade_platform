@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 /**
  * Created by Administrator on 2017/6/2.
  */
-//@EnableConfigurationProperties
+@EnableConfigurationProperties
 @SpringBootApplication
 @Slf4j
 public class Application implements EmbeddedServletContainerCustomizer {

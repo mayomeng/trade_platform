@@ -6,9 +6,10 @@
     <file url="file://$PROJECT_DIR$/back_module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/business_module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/catche_module" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/catche_module/src/main/java/trade/mayo/catche/redis/RedisConfiguration.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common_module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config_module" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/db_module" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbtestaction_module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo_module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mq_module" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/schedule_module" charset="UTF-8" />
