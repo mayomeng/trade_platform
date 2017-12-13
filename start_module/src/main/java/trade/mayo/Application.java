@@ -6,12 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * Created by Administrator on 2017/6/2.
  */
 @EnableConfigurationProperties
 @SpringBootApplication
+@ServletComponentScan
 @Slf4j
 public class Application implements EmbeddedServletContainerCustomizer {
     public static void main(String[] args) {

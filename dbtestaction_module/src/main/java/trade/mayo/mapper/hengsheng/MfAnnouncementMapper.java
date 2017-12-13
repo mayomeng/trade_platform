@@ -1,4 +1,4 @@
-package trade.mayo.mapper;
+package trade.mayo.mapper.hengsheng;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

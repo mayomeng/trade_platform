@@ -5,11 +5,16 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.data.transaction.ChainedTransactionManager;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -22,31 +27,50 @@ import java.io.IOException;
  * Created by Administrator on 2017/12/4 0004.
  */
 @Configuration
-@EnableConfigurationProperties(MbProperties.class)// 开启属性注入,通过@autowired注入
+@PropertySource("classpath:mybatis.properties")
+@AutoConfigureAfter(DbConfiguration.class)
 @EnableTransactionManagement
 public class MybatisConfiguration implements TransactionManagementConfigurer {
 
-    @Autowired
-    private MbProperties mbProperties;
+    @Value("${hengsheng.aliasesPackage}")
+    private String hengshengAliasesPackage;
+    @Value("${hengsheng.mapperLocations}")
+    private String hengshengMapperLocations;
+
+    @Value("${local.aliasesPackage}")
+    private String localAliasesPackage;
+    @Value("${local.mapperLocations}")
+    private String localMapperLocations;
 
     @Autowired
-    @Qualifier("dataSource1")
-    private DataSource dataSource1;
+    @Qualifier("hengshengDataSource")
+    private DataSource hengshengDataSource;
+
+    @Autowired
+    @Qualifier("localDataSource")
+    private DataSource localDataSource;
 
     @Bean
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return new DataSourceTransactionManager(dataSource1);
+
+        DataSourceTransactionManager dtm1 = new DataSourceTransactionManager(hengshengDataSource);
+        DataSourceTransactionManager dtm2 = new DataSourceTransactionManager(localDataSource);
+
+        ChainedTransactionManager ctm = new ChainedTransactionManager(dtm1, dtm2);
+        return ctm;
     }
 
 
-    @Bean(name = "sqlSessionFactory1")
-    public SqlSessionFactory sqlSessionFactory1() throws IOException {
+    @Bean(name = "hengshengSqlSessionFactory")
+    @Primary
+    public SqlSessionFactory hengshengSqlSessionFactory() throws IOException {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(dataSource1);
+        bean.setDataSource(hengshengDataSource);
+        bean.setTypeAliasesPackage(hengshengAliasesPackage);
 
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        bean.setMapperLocations(resolver.getResources(mbProperties.getMapperLocations()));
+        bean.setMapperLocations(resolver.getResources(hengshengMapperLocations));
 
         try {
             return bean.getObject();
@@ -56,8 +80,30 @@ public class MybatisConfiguration implements TransactionManagementConfigurer {
         }
     }
 
-    @Bean
-    public SqlSessionTemplate sqlSessionTemplate(@Qualifier("sqlSessionFactory1")SqlSessionFactory sqlSessionFactory) {
+    @Bean(name = "localSqlSessionFactory")
+    public SqlSessionFactory localSqlSessionFactory() throws IOException {
+        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+        bean.setDataSource(localDataSource);
+        bean.setTypeAliasesPackage(localAliasesPackage);
+
+        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        bean.setMapperLocations(resolver.getResources(localMapperLocations));
+
+        try {
+            return bean.getObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Bean(name="hengshengSqlSessionTemplate")
+    @Primary
+    public SqlSessionTemplate hengshengSqlSessionTemplate(@Qualifier("hengshengSqlSessionFactory")SqlSessionFactory sqlSessionFactory) {
+        return new SqlSessionTemplate(sqlSessionFactory);
+    }
+    @Bean(name="localSqlSessionTemplate")
+    public SqlSessionTemplate localSqlSessionTemplate(@Qualifier("localSqlSessionFactory")SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }
