@@ -3,6 +3,7 @@ package trade.mayo.db.config;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,16 +33,6 @@ import java.io.IOException;
 @EnableTransactionManagement
 public class MybatisConfiguration implements TransactionManagementConfigurer {
 
-    @Value("${hengsheng.aliasesPackage}")
-    private String hengshengAliasesPackage;
-    @Value("${hengsheng.mapperLocations}")
-    private String hengshengMapperLocations;
-
-    @Value("${local.aliasesPackage}")
-    private String localAliasesPackage;
-    @Value("${local.mapperLocations}")
-    private String localMapperLocations;
-
     @Autowired
     @Qualifier("hengshengDataSource")
     private DataSource hengshengDataSource;
@@ -61,49 +52,73 @@ public class MybatisConfiguration implements TransactionManagementConfigurer {
         return ctm;
     }
 
+    @Configuration
+    @PropertySource("classpath:mybatis.properties")
+    @MapperScan(value = "trade.mayo.mapper.hengsheng",
+            sqlSessionFactoryRef = "hengshengSqlSessionFactory")
+    public class HengshenMybatisConfiguration {
 
-    @Bean(name = "hengshengSqlSessionFactory")
-    @Primary
-    public SqlSessionFactory hengshengSqlSessionFactory() throws IOException {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(hengshengDataSource);
-        bean.setTypeAliasesPackage(hengshengAliasesPackage);
+        @Value("${hengsheng.aliasesPackage}")
+        private String hengshengAliasesPackage;
+        @Value("${hengsheng.mapperLocations}")
+        private String hengshengMapperLocations;
 
-        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        bean.setMapperLocations(resolver.getResources(hengshengMapperLocations));
+        @Bean(name = "hengshengSqlSessionFactory")
+        @Primary
+        public SqlSessionFactory hengshengSqlSessionFactory() throws IOException {
+            SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+            bean.setDataSource(hengshengDataSource);
 
-        try {
-            return bean.getObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+            ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+            bean.setMapperLocations(resolver.getResources(hengshengMapperLocations));
+
+            try {
+                return bean.getObject();
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
         }
+
+/*        @Bean(name="hengshengSqlSessionTemplate")
+        @Primary
+        public SqlSessionTemplate hengshengSqlSessionTemplate(@Qualifier("hengshengSqlSessionFactory")SqlSessionFactory sqlSessionFactory) {
+            return new SqlSessionTemplate(sqlSessionFactory);
+        }*/
     }
 
-    @Bean(name = "localSqlSessionFactory")
-    public SqlSessionFactory localSqlSessionFactory() throws IOException {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(localDataSource);
-        bean.setTypeAliasesPackage(localAliasesPackage);
 
-        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        bean.setMapperLocations(resolver.getResources(localMapperLocations));
 
-        try {
-            return bean.getObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
+    @Configuration
+    @PropertySource("classpath:mybatis.properties")
+    @MapperScan(value = "trade.mayo.mapper.local",
+            sqlSessionFactoryRef = "localSqlSessionFactory")
+    public class LocalMybatisConfiguration {
+
+        @Value("${local.aliasesPackage}")
+        private String localAliasesPackage;
+        @Value("${local.mapperLocations}")
+        private String localMapperLocations;
+
+        @Bean(name = "localSqlSessionFactory")
+        public SqlSessionFactory localSqlSessionFactory() throws IOException {
+            SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
+            bean.setDataSource(localDataSource);
+
+            ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+            bean.setMapperLocations(resolver.getResources(localMapperLocations));
+
+            try {
+                return bean.getObject();
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
         }
-    }
 
-    @Bean(name="hengshengSqlSessionTemplate")
-    @Primary
-    public SqlSessionTemplate hengshengSqlSessionTemplate(@Qualifier("hengshengSqlSessionFactory")SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }
-    @Bean(name="localSqlSessionTemplate")
-    public SqlSessionTemplate localSqlSessionTemplate(@Qualifier("localSqlSessionFactory")SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory);
+/*        @Bean(name="localSqlSessionTemplate")
+        public SqlSessionTemplate localSqlSessionTemplate(@Qualifier("localSqlSessionFactory")SqlSessionFactory sqlSessionFactory) {
+            return new SqlSessionTemplate(sqlSessionFactory);
+        }*/
     }
 }
